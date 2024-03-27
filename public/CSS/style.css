@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap');
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+  /* Header */
+header {
+    background-color: #3399ff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+  /* Navigation */
+nav {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #3399ff;
+}
+
+  /* Main content */
+main {
+    padding: 20px;
+}
+
+  /* Products */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.product p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.product .price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3399ff;
+}
+
+.product .button {
+    background-color: #3399ff;
+    color: #fff;
+    border: 1px solid #3399ff;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.product .button:hover {
+    background-color: #ff9933;
+}
+
+  /* Footer */
+footer {
+    background-color: #3399ff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff9933;
+}
+
+  /* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .products {
+        flex-direction: column;
+    }
+}
