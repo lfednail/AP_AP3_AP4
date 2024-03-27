@@ -20,6 +20,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ALL4SPORT</title>
         <link href="{{ asset('css/styles-index.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/connexion.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/login-style.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/CategorieProduit.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/shop-styles.css') }}" rel="stylesheet"/>
     
     <!-- Font Awesome -->
 
@@ -61,27 +67,42 @@
     </style>
 
 
-<div class="example-wrapper">
     <footer>
-        <div class="colonne">
-            <h3>Pour Nous contacter</h3>
-            <p>Adresse Mail : OnAimelaVie@gmail.com</p>
-            <p>Téléphone : 06 81 58 36 76</p>
-        </div>
-        <div class="colonne">
-            <h3>nos Réseaux</h3>
-            <img src="../images/facebook.png"/>
-            <img src="../images/twitter.jpg"/>
-            <img src="../images/instagram.png"/>
-            <a href="https://github.com/lfednail/AP_AP3_AP4">
-                <p>Liens vers notre page Github</p>
-            </a>
-        </div>
+        
+        <div class="newsletter">
+            <p>Inscrivez vous à notre newsletter pour rester informé de nos nouveautés !</p>
+            
+            <form action="" method="post">
+                <input type="email" name="email" placeholder="Votre email"/><br/>
+                <button type="submit">Souscrire</button>
+            </form>
+        </div>  
+
+        <nav>
+            &copy; 2022 ALL4SPORT. Tous droits réservés..<br>
+            Crée par : Fednail <br><br>
+            <a href="#">Mentions légales</a> / <a href="#">Plan du site</a>
+
+            <div class="contact-footer">
+                <h4>Contact</h4>
+                contact@all4sport.com<br>
+                +33 (0)897654321<br/>
+            </div>
+            % for socialLink in socialLinks %}
+    <a href="{{ socialLink.url }}" target="_blank">
+        {% if socialLink.icone is not null %}
+            <i class="{{ socialLink.icone }}"></i>
+        {% else %}
+            {{ socialLink.nom }}
+        {% endif %}
+    </a>
+{% endfor %}
+        </nav>
+        
+        
+        
+        <a href="#top"><img src="images/Banner/Arrow-bar-up.png" alt="Monter" width="20px"/></a>
     </footer>
 
 </body>
-
-</html>
-</div>
-    </body>
 </html>

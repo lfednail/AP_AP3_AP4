@@ -1,20 +1,71 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Administration - {{ site_name }}{% endblock %}
+{%block atyle %} 
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Tableau de bord</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Utilisateurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Commandes</a>
+                </li>
+            </ul>
+        </div>
 
-    {% for PRODUIT in produit %}
-    <a href="{{path('app_stock',{id:PRODUIT.id})}}">
-        <p1>{{PRODUIT.nom}}<br></p1>
-    </a>
-    {% endfor %}
+        <div class="col-md-10 main">
+            <h1>Tableau de bord</h1>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Utilisateurs
+                        </div>
+                        <div class="card-body">
+                            <p>Nombre total d'utilisateurs : {{ total_users }}</p>
+                            <p>Nouveaux utilisateurs aujourd'hui : {{ new_users_today }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Produits
+                        </div>
+                        <div class="card-body">
+                            <p>Nombre total de produits : {{ total_products }}</p>
+                            <p>Nouveaux produits aujourd'hui : {{ new_products_today }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Commandes
+                        </div>
+                        <div class="card-body">
+                            <p>Nombre total de commandes : {{ total_orders }}</p>
+                            <p>Nouvelles commandes aujourd'hui : {{ new_orders_today }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock %}
