@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategorieController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+        {% for COMMANDES in commandes %}
+            <h1><br>la commande: {{COMMANDES.id}}</h1>
+            <p1> état : {{COMMANDES.etat}}</p1>
+            <p2>le prix total est de {{COMMANDES.prixtotal}} euros pour : <br></p2>
+            {% for PANIER in panier %}
+                {% if PANIER.commande.id == COMMANDES.id%}
+                    <li>{{PANIER.produit.nom}} nombre du produit commandé : {{PANIER.quantite}} <br>
+                    pour un prix unitaire de {{PANIER.produit.prix}} euros <br></li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+</div>
+{% endblock %}

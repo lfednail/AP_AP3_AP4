@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - ALL4SPORT{% endblock %}
+
+{% block style %} 
+    <link rel="stylesheet" href="{{ asset('css/styles-index.css') }}">
+{% endblock %}
+
+{% block body %}
+<section class="banner">
+    <img src="{{ asset('images/banner_all4sport.png') }}" alt="Bannière du site">
+    <h1>All4Sport</h1>
+    <p>Votre boutique en ligne de produits </p>
+    
+</section>
+
+<section class="produits-populaires">
+    <h2>Découvrez nos produits populaires</h2>
+    <ul>
+    
+        
+    </ul>
+</section>
+
+<section class="categories">
+    <h2>Parcourez nos catégories</h2>
+    <ul>
+        
+    </ul>
+</section>
+
+<h2>Derniers articles :</h2>
+    <div id="derniers-articles">
+        {% for sport in listesports %}
+            <a href="{{ path('app_categorieList', {id: sport.id}) }}">
+                <img src="{{ sport.photos }}" width="250" height="250">
+            </a>
+        {% endfor %}
+        
+    </div>
+    <section class="avis_clients">
+        <h2>Avis clients </h2>
+        <article>
+            <div class="client_image"><img src="/Images/Clients/" alt="Image client"></div>
+            <p class="client_name">John Doe</p>
+            <div class="rating">
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p class="review">Super magasin en ligne pour tous les sportifs. </p>
+        </article>
+
+        <article>
+            <div class="client_image"><img src="/Images/Clients/" alt="Image client"></div>
+            <p class="client_name">John Doe</p>
+            <div class="rating">
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p class="review">Super magasin en ligne pour tous les sportifs. </p>
+        </article>
+    </section>
+
+    <section>
+        <div class="about">
+            <h2>A propos </h2>
+            <p> ALL4SPORT est le magasin en ligne spécialisé dans la vente d'équipements sportifs de qualité.
+                Nous proposons une large gamme de produits pour tous les types de sport et nous nous engageons 
+                à fournir des articles de haute performence.
+            </p>
+            <img class="img-about" src="/Images/LOGO/LOGO-Aall4sport-4noir.png" alt="Logo All4sport"/>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1>contact</h1>
+    
+        <div class="row">
+            <div class="column">
+                <img src="/Images/LOGO/LOGO-Aall4sport-app.png" width="100%">
+            </div>
+            <div class="column">
+                <form action="/action_page.php">
+                    <label for="fname">Nom</label>
+                    <input type="text" id="fname" name="firstname" placeholder="votre  nom..">
+                    <label for="lname">Prenom</label>
+                    <input type="text" id="lname" name="lastname" placeholder="votre  prenom..">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="france">France</option>
+                    </select>
+                    <label for="subject">Message</label>
+                    <textarea id="subject" name="subject" placeholder="Message .." style="height:170px"></textarea>
+                    <input type="submit" value="Envoyer">
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+

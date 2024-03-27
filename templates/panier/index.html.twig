@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+<h1>Produit dans le panier :</h1>
+    {% if produitid != null %}
+        {% for PRODUIT in produit %}
+            {% if PRODUIT.id == produitid%}
+                <p1>nom du produit:{{PRODUIT.nom}}<br></p1>
+                <p2>nombre de produit : {{quantite}}<br></p2>
+                <p2>Prix :{{PRODUIT.prix}} €<br></p2>
+                <p3>Prix total :{{PRODUIT.prix * quantite}} €</p2>
+            {% endif %}
+        {% endfor %}
+        <form method="post" action="/createcommande">
+            <input type="hidden" name="quantite" value={{quantite}}>
+            <input type="hidden" name="produitid" value={{produitid}}>
+            <input type="submit" value="Confirmer commande">
+        </form>
+    {% endif %}    
+{% endblock %}
